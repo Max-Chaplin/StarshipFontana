@@ -12,7 +12,6 @@ SFBoundingBox::~SFBoundingBox() {
   centre.reset();
   extent_x.reset();
   extent_y.reset();
-
 }
 
 void SFBoundingBox::SetCentre(Vector2 & v) {

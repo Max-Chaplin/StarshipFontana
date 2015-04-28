@@ -124,17 +124,6 @@ void SFAsset::GoSouth() {
   bbox->centre = make_shared<Vector2>(c);
 }
 
-void SFAsset::PlayerNorth() {
-  Vector2 c = *(bbox->centre) + Vector2(0.0f, 5.0f);
-  bbox->centre.reset();
-  bbox->centre = make_shared<Vector2>(c);
-}
-
-void SFAsset::PlayerSouth() {
-  Vector2 c = *(bbox->centre) + Vector2(0.0f, -5.0f);
-  bbox->centre.reset();
-  bbox->centre = make_shared<Vector2>(c);
-}
 bool SFAsset::CollidesWith(shared_ptr<SFAsset> other) {
   return bbox->CollidesWith(other->bbox);
 }
