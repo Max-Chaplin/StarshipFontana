@@ -87,9 +87,19 @@ void SFApp::OnUpdateWorld() {
   // Update enemy positions
   for(auto a : aliens) {
     // do something here
+    a->GoSouth();
   }
 
   // Detect collisions
+
+
+    for(auto a : aliens) {
+      if(a->CollidesWith(player)) {
+        player->SetNotAlive();
+       }
+     }
+   
+
   for(auto p : projectiles) {
     for(auto a : aliens) {
       if(p->CollidesWith(a)) {
