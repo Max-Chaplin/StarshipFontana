@@ -122,6 +122,8 @@ void SFAsset::GoSouth() {
   Vector2 c = *(bbox->centre) + Vector2(0.0f, -0.5f);
     bbox->centre.reset();
     bbox->centre = make_shared<Vector2>(c);
+   
+
 }
 
 void SFAsset::PlayerNorth() {
@@ -159,7 +161,7 @@ bool SFAsset::IsAlive() {
 }
 
 void SFAsset::HandleCollision() {
-  if(SFASSET_PROJECTILE == type || SFASSET_ALIEN == type || SFASSET_PLAYER == type) 
+  if(SFASSET_PROJECTILE == type || SFASSET_ALIEN == type || SFASSET_PLAYER == type || SFASSET_COIN == type) 
     SetNotAlive();
 }
 
