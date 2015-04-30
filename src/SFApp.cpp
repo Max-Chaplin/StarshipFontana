@@ -86,6 +86,7 @@ void SFApp::OnUpdateWorld() {
   }
 
   // Update enemy positions
+
   for(auto a : aliens) {
     // do something here
     a->GoSouth();
@@ -93,14 +94,11 @@ void SFApp::OnUpdateWorld() {
       player->SetNotAlive();
       a->HandleCollision();
       player->HandleCollision();
-      cout<<"You Died"<<endl;
-      is_running=false;
+
   }
 }
   // Detect collisions
     
-   
-
   for(auto p : projectiles) {
     for(auto a : aliens) {
       if(p->CollidesWith(a)) {
@@ -116,7 +114,7 @@ void SFApp::OnUpdateWorld() {
     if(a->IsAlive()) {
       tmp.push_back(a);
     }
-  }
+}
   aliens.clear();
   aliens = list<shared_ptr<SFAsset>>(tmp);
 }
